@@ -1,0 +1,29 @@
+<styles>
+  <!-- include dq.less -> all css should be kept in that file the file will auto-name-space the css.
+  Essentially wraps a dq-Name id (#dqName{ all dq specific css }) around all css -->
+  <less href="dq.less"/>
+  <!-- if user use the uncompressed/ un uglified js else server the minified one -->
+  <!-- when writing the DQ run the task runner grunt to watch for changes in the script.js to write to the minified version script.min.js -->
+  <!-- see package.json && grunt.js -->
+  <include href="grid.js" />
+  <include cond="not gv.isUser()" href="script.min.js" />
+  <include cond="gv.isUser()" href="script.js" />
+
+<!-- dfault style variable for examples and info look here-->
+<!-- https://support.focusvision.com/Decipher/007_Advanced_Programming/008_Styles_and_Formatting/002_Creating_Custom_Styles/002_Dynamic_Question_Style_Design_and_QA_Checklist#2.7.1:__Style_Variables -->
+
+  <stylevar name="dq-name:help-hover" where="builder" type="string" title="Help text" desc="Help text displayed when hovered over info icon">You are hovering over a info icon</stylevar>
+
+  <style name="question.after" wrap="ready" cond="device.smartphone or device.tablet or device.desktop">
+    <![CDATA[
+        var jsexport = ${jsexport()};
+        \@if gv.hasQA(True) and gv.showCms()
+        jsexport.debug = true;
+        // run the qunit tests       
+        \@endif
+        jsexport.optional = ${this.optional}
+        Survey.question.dq-name.setup(jsexport);
+    ]]>
+  </style>
+
+</styles>

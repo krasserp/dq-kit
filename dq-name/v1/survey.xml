@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<survey name="Survey" 
+  alt="DQ" 
+  autosave="0" 
+  compat="134" 
+  state="testing" 
+  ss:disableBackButton="0"
+  builderCompatible="0"
+  otherLanguages="german"
+  fir="on"
+>
+<samplesources default="0">
+  <samplesource list="0" title="default">
+    <exit cond="qualified">
+      Your feedback and quick response to this survey are greatly appreciated.
+    </exit>
+    <exit cond="terminated"> Thank you for your input!</exit>
+    <exit cond="overquota"> Thank you for your input!</exit>
+  </samplesource>
+</samplesources>
+
+
+</survey>
