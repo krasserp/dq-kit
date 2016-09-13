@@ -22,7 +22,7 @@
             var dq = new dq-name(questionObject);
 
             var nameSpaceWrapper = $('<div/>',{
-                'id' : 'dq-name'
+                'id' : 'dq-name_'+dq.qLabel
             });
 
             // apply a div wrapper around the question to namespace all css via the dq.less 
