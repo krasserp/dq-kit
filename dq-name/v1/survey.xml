@@ -5,7 +5,7 @@
   compat="134" 
   state="testing" 
   ss:disableBackButton="0"
-  builderCompatible="0"
+  builderCompatible="1"
   otherLanguages="german"
   fir="on"
 >

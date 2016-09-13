@@ -1,0 +1,33 @@
+<meta>
+    <title>short title</title>
+    <description>
+        <![CDATA[
+            longer description with some HTML, that shows up in builder. Link th the KB page here
+        ]]>
+    </description>
+    <scope>select</scope>
+    <owner>custompr+dq-name@decipherinc.com</owner>
+    <supports>noanswer</supports>
+    <state>dev</state> <!-- https://decipher.fogbugz.com/default.asp?bugnumber-->
+    <modifies>controls</modifies>
+    <qem name="<row|col|choice>">other variable</qem>
+    <rename name="<row|col|choice>">alternative name shown in Builder</rename>
+    <require name="attribute">*</require>
+    <count name="<row|col|choice>">number (e.g. 2+) or range (e.g. 2-10)</count>
+    <template scope="select"><![CDATA[
+       <select minRanks="1" label="{x}">
+           <row label="r1">ROW 1</row>
+           <row label="r2">ROW 2</row>
+           <choice label="ch1">CHOICE 1</choice>
+           <choice label="ch2">CHOICE 2</choice>
+       </select>
+       <suspend />
+       <radio cond="{x}.r1"></radio>
+       <number label="{x}_total"></number>
+    ]]></template>
+    <compat>required compat number</compat>
+    <builder>pan</builder>
+    <device name="desktop" compat="optimized"/>
+    <device name="tablet" compat="optimized"/>
+    <device name="smartphone" compat="optimized"/>
+</meta>

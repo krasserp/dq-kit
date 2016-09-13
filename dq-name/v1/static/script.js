@@ -24,6 +24,8 @@
                 'id' : 'dq-name'
             });
 
+            // apply a div wrapper around the question to namespace all css via the dq.less 
+            // pre-requisite is tha all css is kept within the namespace div #dq-name
             $(dq.applyCssTo).wrap(nameSpaceWrapper);
         }
     }
