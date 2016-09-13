@@ -19,5 +19,13 @@
   </samplesource>
 </samplesources>
 
+<radio label="q1" uses="dq-name.1">
+  <title>testing question</title>
+  <comment>Select one</comment>
+  <row label="r1">a1</row>
+  <row label="r2">a2</row>
+  <row label="r3">a3</row>
+</radio>
+<suspend/>
 
 </survey>

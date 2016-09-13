@@ -9,10 +9,10 @@
   <include cond="not gv.isUser()" href="script.min.js" />
   <include cond="gv.isUser()" href="script.js" />
 
-<!-- dfault style variable for examples and info look here-->
-<!-- https://support.focusvision.com/Decipher/007_Advanced_Programming/008_Styles_and_Formatting/002_Creating_Custom_Styles/002_Dynamic_Question_Style_Design_and_QA_Checklist#2.7.1:__Style_Variables -->
+  <!-- dfault style variable for examples and info look here-->
+  <!-- https://support.focusvision.com/Decipher/007_Advanced_Programming/008_Styles_and_Formatting/002_Creating_Custom_Styles/  002_Dynamic_Question_Style_Design_and_QA_Checklist#2.7.1:__Style_Variables -->
 
-<!-- use type="res" to make it translatable in the xlates. You can restrict what kind of elements the style variable may be applied to using the tag attribute (e.g. col, row or choice). For example, tag="row" makes the style variable only available to <row> elements.-->
+  <!-- use type="res" to make it translatable in the xlates. You can restrict what kind of elements the style variable may be applied to  using the tag attribute (e.g. col, row or choice). For example, tag="row" makes the style variable only available to <row> elements.-->
   <stylevar name="dq-name:help-hover" where="builder" type="res" title="Help text" desc="Help text displayed when hovered over info icon">You are hovering over a info icon</stylevar>
 
   <style name="question.after" wrap="ready" cond="device.smartphone or device.tablet or device.desktop">

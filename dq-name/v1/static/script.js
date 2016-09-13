@@ -9,6 +9,7 @@
         this.qO        = questionObject;
         this.qLabel    = this.qO.label;
         this.applyCssTo= '#question_'+this.qLabel;
+        console.log(this.qO);
     };
 
     /**

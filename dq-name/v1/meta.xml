@@ -5,7 +5,7 @@
             longer description with some HTML, that shows up in builder. Link th the KB page here
         ]]>
     </description>
-    <scope>select</scope>
+    <scope>radio</scope>
     <owner>custompr+dq-name@decipherinc.com</owner>
     <supports>noanswer</supports>
     <state>dev</state> <!-- https://decipher.fogbugz.com/default.asp?bugnumber-->
@@ -14,13 +14,13 @@
     <rename name="<row|col|choice>">alternative name shown in Builder</rename>
     <require name="attribute">*</require>
     <count name="<row|col|choice>">number (e.g. 2+) or range (e.g. 2-10)</count>
-    <template scope="select"><![CDATA[
-       <select minRanks="1" label="{x}">
+    <template scope="radio"><![CDATA[
+       <radio label="{x}">
            <row label="r1">ROW 1</row>
            <row label="r2">ROW 2</row>
            <choice label="ch1">CHOICE 1</choice>
            <choice label="ch2">CHOICE 2</choice>
-       </select>
+       </radio>
        <suspend />
        <radio cond="{x}.r1"></radio>
        <number label="{x}_total"></number>
