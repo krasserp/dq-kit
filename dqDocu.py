@@ -88,6 +88,7 @@ mainInfo = """
 </ul>
 """ % (dqName, dqVersion, deviceli,compatli)
 
+demo = '<h2><a href="../v%s">Demo</a></h2>' % (dqVersion)
 
 techcons = "<h2>Technical Considerations:</h2>"+styleItems['technicalConsiderations']
 
@@ -117,7 +118,7 @@ for i in styleItems['stylevars']:
 customisableItems = "<h3>Customisable items:</h3>"+customUl+"</ul>"
 
 
-combined = headline +  mainInfo + intro + techcons + baseType + baseOptions + limits + customisableItems
+combined = headline +  mainInfo + demo + intro + techcons + baseType + baseOptions + limits + customisableItems
 
 htmlWrapper ="""
 <!DOCTYPE html>
