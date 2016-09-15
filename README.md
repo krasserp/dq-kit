@@ -3,7 +3,7 @@ Tool-kit to create or copy existing DQs
 
 ``` createDQ.sh ``` can be set up as an alias in .bashrc
 ``` alias createDQ="/home/jaminb/v2/temp/pkrasser/scripts/dq-kit/createDQ.sh"```
-```cd``` to the lib folder in whihc a new DQ shall be set up or an existing DQ shall be copied to and run the script/comand.
+```cd``` to the lib folder in which a new DQ shall be set up or an existing DQ shall be copied to. Run the script/comand.
 **newDQ** will create a new DQ based on this git repos files **cpDQ** will copy a DQ from the specified path and change the name of the DQ and the namespace variables ie. stylevars etc.
 
 ```dqDocu.py``` also usable via alias ```alias dqDocu="/home/jaminb/v2/temp/pkrasser/scripts/dq-kit/dqDocu.py"```
