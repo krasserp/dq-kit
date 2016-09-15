@@ -1,4 +1,17 @@
 <styles>
+  <!-- the next two tags are for the documentation document [technicalConsiderations, limitations] -->
+  <technicalConsiderations>
+    <![CDATA[
+      <p>Here you can add your technical considerations text for the documentation</p>
+      <p>Feel free to write with html tags </p>
+      ]]>
+  </technicalConsiderations>
+  <limitations>
+    <![CDATA[
+    This tag is also for the documentaion you can add html tags in order to format the documentaion. <p> some paragraph</p>
+    ]]>
+  </limitations>
+
   <!-- include dq.less -> all css should be kept in that file the file will auto-name-space the css.
   Essentially wraps a dq-Name id (#dqName{ all dq specific css }) around all css -->
   <less href="dq.less"/>
