@@ -74,15 +74,24 @@ Options = newDQ|cpDQ
 
 
 ```dqDocu.py``` also usable via alias ```alias dqDocu="/home/jaminb/v2/temp/pkrasser/scripts/dq-kit/dqDocu.py"```
-creates a docu.html file in the static directory of the DQ. The info of the Documentation is gathered from survey.xml and meta.xml
+creates a docu.html file in the static directory of the DQ. The info of the Documentation is gathered from styles.xml and meta.xml
 Some additional tags were added to the template and some extra files in the static folder of the template to accomodate this.
 
-The template has been set up with the intend to minize the effort when creating and or copying DQs. The name-spacing should be taken care of.
-meta.xml is taken from the kb + additional device support tags
+Example here ```https://v2.decipherinc.com/survey/temp/pkrasser/customPR/tests/dq-kit/lib/philstestdq/v1/docu.html```
 
-Once a new DQ has been created via ```createDQ``` the meta.xml needs to be adjusted to only contain valid xml. Currently 
-still multiple values are specified in some tag attributes ```<tag attr="<row|col|choices>" />```
+### Example workflow
 
-Once the DQ is working and has its stylevars and info updated in the styles.xml run ```dqDocu``` and this will generate a docu.html file within the static folder of the DQ
+* cd to the lib directory where you'd like to add a new DQ. 
+* call createDQ.sh via alias ```createDQ``` specify you'd like to add a new DQ via **newDQ** provide the name for the new DQ ``` whatevernameaslongaslowercase```. 
+* modify the meta.xml, some default values are not valid xml but placeholders for potential values eg.: ```<row|cols|choices```
+* add items to the res.xml or remove the res.xml if not needed
+* test the survey, path/to/your/project/lib/yourdqname/v1, errors thrown will pretty much point to what still needs updating in the meta.xml
+* in the versioned folder of the DQ **v1** run ```npm install`` to get the node module dependencies for grunt contribute uglify and watch
+* run grunt to watch all javaScript file changes --> will create minified versions ```.min.js``` of the modified files. 
+* once happy with the DQ run the ```dqDocu.py``` alias ```dqDocu``` this will generate the automated documentaion
+* 
+
+
+
 
 
