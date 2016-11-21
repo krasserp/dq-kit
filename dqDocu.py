@@ -94,7 +94,7 @@ techcons = "<h2>Technical Considerations:</h2>"+styleItems['technicalConsiderati
 
 baseType = "<h3>Base question type:</h3>\n <p>"+metaItems['scope']+"</p>\n"
 
-baseOptions = "<h3>Base question options:</h3>\n <p>"+metaItems['supports']+"</p>\n"
+baseOptions = "<h3>Base question options:</h3>\n <p>"+metaItems['supports']+"</p>\n" if 'supports' in metaItems else " "
 
 limits = "<h3>Limitations</h3>\n <p>"+styleItems['limitations']+"</p>\n"
 
