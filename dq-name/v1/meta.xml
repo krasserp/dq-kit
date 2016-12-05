@@ -14,6 +14,7 @@
     <rename name="row">alternative name shown in Builder</rename>  <!-- possible values for name="" <row|col|choice>  -->
     <require name="attribute">*</require>
     <count name="row">2+</count>  <!-- possible values for name="" <row|col|choice> and values for the tag content number (e.g. 2+) or range (e.g. 2-10)  -->
+    <template scope="checkbox"><![CDATA[
        <radio label="{x}">
            <row label="r1">ROW 1</row>
            <row label="r2">ROW 2</row>
