@@ -28,6 +28,42 @@
   <!-- use type="res" to make it translatable in the xlates. You can restrict what kind of elements the style variable may be applied to  using the tag attribute (e.g. col, row or choice). For example, tag="row" makes the style variable only available to <row> elements.-->
   <stylevar name="dq-name:help-hover" where="builder" type="res" title="Help text" desc="Help text displayed when hovered over info icon">You are hovering over a info icon</stylevar>
 
+
+
+
+
+<!-- Adding the question.header and question.footer to this template purely to be able to add a wrapper id around the original question for styling purposes
+to allow instant styling rather than applying this via JS and have the styling only applied after JS loaded -->
+<style name='question.header'> <![CDATA[
+<div id="dq-name_${this.label}">
+<div id="question_${this.label}" class="question ${'disabledElement ' if why and gv.debug.qa else ''}${this.getName().lower()} label_${this.label} $(this.styles.ss.questionClassNames) $(hasError)"${' role="radiogroup" aria-labelledby="' + (this.label + '_' + ec.enabledCols[0].label if ec.haveColLegend else 'question_text_' + this.label) + '"' if ec.simpleList else ''}>
+${v2_insertStyle('survey.question')}
+$(error)
+${v2_insertStyle('survey.question.instructions')}
+${v2_insertStyle('survey.question.answers.start')}
+]]></style>
+
+
+<style name='question.footer'> <![CDATA[
+${v2_insertStyle('survey.question.answers.end')}
+</div>
+</div>
+<!-- /.question -->
+]]></style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <style name="question.after" wrap="ready" cond="device.smartphone or device.tablet or device.desktop">
     <![CDATA[
         var jsexport = ${jsexport()};
@@ -35,9 +71,33 @@
         jsexport.debug = true;
         // run the qunit tests       
         \@endif
+        // uses is needed for the grid.js set up
+        jsexport.uses = ${[use.split('.')[0] for use in this.uses]};
         jsexport.optional = ${this.optional}
         Survey.question.dq-name.setup(jsexport);
     ]]>
   </style>
+
+<!-- add page specific CSS to this page.head else DQ specific CSS from the dq.less tend to spill into the overall less/css file which can affect the whole survey layout -->
+<!-- good and below an example for media queries based on the html #surveyContainer -->
+<style name="page.head"><![CDATA[
+<style>
+
+@media screen and (min-width:890px) and (min-height:770px){
+
+  #surveyContainer,html{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+  }
+
+
+}
+
+</style>
+]]></style>
+
+
 
 </styles>

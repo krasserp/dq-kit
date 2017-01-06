@@ -9,7 +9,50 @@
         this.qO        = questionObject;
         this.qLabel    = this.qO.label;
         this.applyCssTo= '#question_'+this.qLabel;
+        // grid easy data input fields update mini lib by Michael Hardy
+        this.grid = Survey.question.grid.setup(questionObject);
         console.log(this.qO);
+
+        /**
+         * [returnItemDivs set up of div items representing row or colum itesm, all attributes are added as data points/items for easy use/manipulation]
+         * @param  {[obj]} rowColChoices [pass in either the rows or the columns of a question object]
+         * @param  {[string]} name       [string for css handling]
+         * @return {[arr]}               [returns an array containing all row or col items as div items]
+         */
+        this.returnItemDivs = function(rowColChoices, name){
+
+            var returnArr = [];
+
+            var rowColChoices = rowColChoices;
+
+            for (var i = 0; i < rowColChoices.length; i++ ){
+                var item = $('<div/>',{
+                    //'id': rowColChoices[i].label,
+                    'html': rowColChoices[i].text,
+                    'class' : 'dq-'+name
+                });
+                for (var k in rowColChoices[i]){
+
+                    if(typeof rowColChoices[i][k] !='object'){
+                        item.attr('data-'+k, rowColChoices[i][k]);
+                    }
+
+                    if(typeof rowColChoices[i][k] =='object'){
+                        var obj = rowColChoices[i][k];
+                        for(var key1 in obj){
+                            item.attr('data-'+key1, obj[key1]);
+                        }
+                    }
+
+                }
+
+                returnArr.push(item);
+            }
+
+            return returnArr;
+        }
+
+
     };
 
     /**
@@ -18,16 +61,9 @@
      */
     Survey.question.dq-name = {
         setup: function(questionObject){
-            // wrap the dq-name around the question DOM element to allow for the css name spacing
+            // here you go add your magic
             var dq = new dq-name(questionObject);
 
-            var nameSpaceWrapper = $('<div/>',{
-                'id' : 'dq-name_'+dq.qLabel
-            });
-
-            // apply a div wrapper around the question to namespace all css via the dq.less 
-            // pre-requisite is tha all css is kept within the namespace div #dq-name
-            $(dq.applyCssTo).wrap(nameSpaceWrapper);
         }
     }
 
