@@ -128,6 +128,8 @@ htmlWrapper ="""
   <meta name="viewport" content="width=device-width">
     <title>Documentation %s</title>
     <link rel="stylesheet" type="text/css" href="docu.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/highlight.min.js"></script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -135,7 +137,7 @@ htmlWrapper ="""
         </div>
        %s 
     </div>
-
+<script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
 """ % (dqName, combined)
