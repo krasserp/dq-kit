@@ -88,7 +88,7 @@ mainInfo = """
 </ul>
 """ % (dqName, dqVersion, deviceli,compatli)
 
-demo = '<h2><a href="../v%s">Demo</a></h2>' % (dqVersion)
+demo = '<h2><a href="../v%s?dj">Demo</a></h2>' % (dqVersion)
 
 techcons = "<h2>Technical Considerations:</h2>"+styleItems['technicalConsiderations']
 
