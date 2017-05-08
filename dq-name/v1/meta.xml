@@ -1,5 +1,5 @@
 <meta>
-    <title>short title</title>
+    <title>dq-name</title>
     <description>
         <![CDATA[
             longer description with some HTML, that shows up in builder. Link th the KB page here
@@ -8,13 +8,13 @@
     <scope>radio</scope>
     <owner>custompr+dq-name@decipherinc.com</owner>
     <supports>noanswer</supports>
-    <state>dev</state> <!-- https://decipher.fogbugz.com/default.asp?bugnumber-->
+    <state>dev</state> 
     <modifies>controls</modifies>
     <qem name="row">other variable</qem> <!-- possible values for name=""  <row|col|choice>  -->
     <rename name="row">alternative name shown in Builder</rename>  <!-- possible values for name="" <row|col|choice>  -->
     <require name="attribute">*</require>
     <count name="row">2+</count>  <!-- possible values for name="" <row|col|choice> and values for the tag content number (e.g. 2+) or range (e.g. 2-10)  -->
-    <template scope="checkbox"><![CDATA[
+    <template scope="radio"><![CDATA[
        <radio label="{x}">
            <row label="r1">ROW 1</row>
            <row label="r2">ROW 2</row>
@@ -22,10 +22,8 @@
            <choice label="ch2">CHOICE 2</choice>
        </radio>
        <suspend />
-       <radio cond="{x}.r1"></radio>
-       <number label="{x}_total"></number>
     ]]></template>
-    <compat>135</compat><!-- required compat number -->
+    <compat>137</compat><!-- required compat number -->
     <builder>pan</builder>
     <device name="desktop" compat="optimized"/>
     <device name="tablet" compat="optimized"/>

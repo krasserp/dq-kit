@@ -18,7 +18,9 @@
   <!-- if user use the uncompressed/ un uglified js else server the minified one -->
   <!-- when writing the DQ run the task runner grunt to watch for changes in the script.js to write to the minified version script.min.js -->
   <!-- see package.json && grunt.js -->
+  <!-- grid.js is helpful for punching values view grid.js to decide if needed or not -->
   <include href="grid.js" />
+  <!-- if you don't minify your script.js then remove the line below else your DQ js ie. script.min.js will not be there and not loaded -->
   <include cond="not gv.isUser()" href="script.min.js" />
   <include cond="gv.isUser()" href="script.js" />
 
@@ -50,16 +52,6 @@ ${v2_insertStyle('survey.question.answers.end')}
 </div>
 <!-- /.question -->
 ]]></style>
-
-
-
-
-
-
-
-
-
-
 
 
 
