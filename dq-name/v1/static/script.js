@@ -14,7 +14,7 @@
         console.log(this.qO);
 
         /**
-         * [returnItemDivs set up of div items representing row or colum itesm, all attributes are added as data points/items for easy use/manipulation]
+         * [returnItemDivs set up of div items representing row or colum items, all attributes are added as data points/items for easy use/manipulation]
          * @param  {[obj]} rowColChoices [pass in either the rows or the columns of a question object]
          * @param  {[string]} name       [string for css handling]
          * @return {[arr]}               [returns an array containing all row or col items as div items]
@@ -27,7 +27,6 @@
 
             for (var i = 0; i < rowColChoices.length; i++ ){
                 var item = $('<div/>',{
-                    //'id': rowColChoices[i].label,
                     'html': rowColChoices[i].text,
                     'class' : 'dq-'+name
                 });
